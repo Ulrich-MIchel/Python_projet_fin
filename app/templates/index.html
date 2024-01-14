@@ -1,0 +1,115 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div id="nav-bar">
+  <input type="checkbox" id="nav-toggle">
+  
+  <div id="nav-header">
+    <div id="nav-footer-avatar">
+      <img src="https://saintjeanmanagement.org/wp-content/uploads/2022/06/SAINTJEANINGE.jpg">
+    </div>
+    <a id="nav-title" href="https://codepen.io" target="_blank"></i>GROUPE6</a>
+    <label for="nav-toggle">
+      <span id="nav-toggle-burger"></span>
+    </label>
+    <hr>
+  </div>
+  
+  <div id="nav-content">
+    <div class="nav-button"><a href="/demo"><i class="fas fa-palette"></i><span>Notre application</span></a></div>
+    <div class="nav-button"><a href="/description"><i class="fas fa-images"></i><span>Description</span></a></div>
+    <!--<div class="nav-button"><a href="pinned_items.html"><i class="fas fa-thumbtack"></i><span>Pinned Items</span></a></div>-->
+    <hr>
+    <div class="nav-button"><a href="following.html"><i class="fas fa-heart"></i><span>Following</span></a></div>
+    <div class="nav-button"><a href="trending.html"><i class="fas fa-chart-line"></i><span>Trending</span></a></div>
+    <div class="nav-button"><a href="challenges.html"><i class="fas fa-fire"></i><span>Challenges</span></a></div>
+    <div class="nav-button"><a href="spark.html"><i class="fas fa-magic"></i><span>Spark</span></a></div>
+    <hr>
+    <div class="nav-button"><a href="codepen_pro.html"><i class="fas fa-gem"></i><span>Membre du groupe</span></a></div>
+    <div id="nav-content-highlight"></div>
+</div>
+
+  
+  <input type="checkbox" id="nav-footer-toggle">
+  
+  <div id="nav-footer">
+    <div id="nav-footer-heading">
+      <div id="nav-footer-avatar">
+        <img src="https://saintjeanmanagement.org/wp-content/uploads/2022/06/SAINTJEANINGE.jpg">
+      </div>
+      <div id="nav-footer-titlebox">
+        <a id="nav-footer-title" target="_blank">p4dataScience</a>
+        <span id="nav-footer-subtitle">Admin</span>
+      </div>
+      <label for="nav-footer-toggle">
+        <i class="fas fa-caret-up"></i>
+      </label>
+    </div>
+    <div id="nav-footer-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  </div>
+</div>
+<!-- Mon code initial-->
+<div class="main">
+  <div class="title">
+    <h3>Application de Reconnaissance d'images</h3>
+  </div>
+
+  <div class="text-container">
+    <div id="auto-increment-text-content" class="auto-increment-text typing-animation"></div>
+  </div>
+</div>
+
+<script>
+  // JavaScript pour l'incrémentation automatique du texte
+  const autoIncrementTextContent = document.getElementById('auto-increment-text-content');
+
+  // Paragraphe à faire défiler
+  const paragraphToScroll = `
+    Bienvenue sur notre application de reconnaissance d'images. 
+    Découvrez toutes les fonctionnalités incroyables que nous proposons. 
+    Notre équipe est dédiée à fournir une expérience exceptionnelle pour nos utilisateurs.
+    Interrogez la barre de navigation à votre gauche pour en savoir plus .
+  `;
+
+  let currentIndex = 0;
+
+  function autoIncrementText() {
+    autoIncrementTextContent.innerHTML += paragraphToScroll[currentIndex];
+
+    currentIndex++;
+
+    if (currentIndex < paragraphToScroll.length) {
+      setTimeout(autoIncrementText, 50); // Ajustez la vitesse d'incrémentation ici
+    }
+  }
+
+  // Lancer l'animation lors du chargement de la page
+  window.onload = autoIncrementText;
+</script>
+
+
+
+  <!--<div class="panel">
+    <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+    <label for="file-upload" id="file-drag" class="upload-box">
+      <div id="upload-caption">Drop image here or click to select</div>
+      <img id="image-preview" class="hidden" />
+    </label>
+  </div>
+  <div style="margin-bottom: 2rem;">
+    <input type="button" value="Submit" class="button" onclick="submitImage();" />
+    <input type="button" value="Clear" class="button" onclick="clearImage();" />
+  </div>
+
+  <div id="image-box">
+    <img id="image-display" />
+    <div id="pred-result" class="hidden"></div>
+    <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+</div>-->
+
+{% endblock %}
